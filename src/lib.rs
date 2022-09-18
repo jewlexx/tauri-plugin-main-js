@@ -3,12 +3,12 @@ use tauri::{
     Runtime,
 };
 
-pub(crate) use deno_core::include_js_files;
+pub use deno_core::include_js_files;
 
 #[macro_export]
 macro_rules! include_main {
-    ($path:literal) => {
-        $crate::include_js_files($path)
+    ($($paths:literal)+) => {
+        $crate::include_js_files!(prefix "deno:tauri/main", $($paths,)*)
     };
 }
 
