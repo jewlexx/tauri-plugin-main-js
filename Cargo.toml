@@ -10,3 +10,8 @@ exclude = ["/examples"]
 [dependencies]
 deno_core = "0.151.0"
 tauri = { version = "1.1.1" }
+
+[workspace]
+members = [
+  "examples/*/src-tauri",
+]

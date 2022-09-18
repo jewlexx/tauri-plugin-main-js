@@ -3,6 +3,8 @@
   windows_subsystem = "windows"
 )]
 
+use tauri_plugin_main_js::include_main;
+
 fn main() {
   tauri::Builder::default()
     .plugin(tauri_plugin_main_js::init())
